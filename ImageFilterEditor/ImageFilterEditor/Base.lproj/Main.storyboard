@@ -31,19 +31,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="79q-xy-DUw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="464"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="464" id="8xM-Pp-X9m"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="1Xv-Gb-n9j">
                                 <rect key="frame" x="20" y="572" width="374" height="207"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="Fvt-Hu-6ZL">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invert Colors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upM-YZ-jgO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invert Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upM-YZ-jgO">
                                                 <rect key="frame" x="0.0" y="0.0" width="303" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="261" id="Yoy-VN-bWH"/>
@@ -129,6 +123,12 @@
                                     <constraint firstItem="6Eh-a8-ZnQ" firstAttribute="trailing" secondItem="CYB-Bx-eTb" secondAttribute="trailing" id="ze4-Oi-jsk"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="79q-xy-DUw">
+                                <rect key="frame" x="0.0" y="88" width="414" height="464"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="464" id="8xM-Pp-X9m"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -141,7 +141,26 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lxx-al-vtM"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EgI-34-gZt"/>
+                    <navigationItem key="navigationItem" id="EgI-34-gZt">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="tX6-vt-ZqC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7ju-DI-jNe">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Photos"/>
+                            </button>
+                            <connections>
+                                <action selector="photosButton:" destination="cDv-D3-GEB" id="E2Z-EP-EHK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="79q-xy-DUw" id="bdH-ox-NqK"/>
+                        <outlet property="invertColors" destination="5Cf-lF-hny" id="Dt3-VO-hgM"/>
+                        <outlet property="kaleidoscopeSlider" destination="zaq-pn-a7W" id="NPK-Z6-iPd"/>
+                        <outlet property="perspectiveSwitch" destination="2yo-ht-Ttf" id="Xyf-wZ-RP5"/>
+                        <outlet property="sketchifySlider" destination="qhH-Ly-krU" id="Qsc-pr-58U"/>
+                        <outlet property="vignetteSlider" destination="I3X-zn-1qa" id="Rig-ng-wuK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypz-RN-8Uh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

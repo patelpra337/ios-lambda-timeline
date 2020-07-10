@@ -13,6 +13,7 @@
 		AB63477124B6B136001F0D15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB63477024B6B136001F0D15 /* Assets.xcassets */; };
 		AB63477424B6B136001F0D15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB63477224B6B136001F0D15 /* LaunchScreen.storyboard */; };
 		AB63477C24B6C2E7001F0D15 /* ImagePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63477B24B6C2E7001F0D15 /* ImagePostViewController.swift */; };
+		AB63477E24B7E61A001F0D15 /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB63477D24B7E61A001F0D15 /* UIImage+Scaling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AB63477324B6B136001F0D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB63477524B6B136001F0D15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB63477B24B6C2E7001F0D15 /* ImagePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePostViewController.swift; sourceTree = "<group>"; };
+		AB63477D24B7E61A001F0D15 /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				AB63476924B6B134001F0D15 /* SceneDelegate.swift */,
 				AB63476D24B6B134001F0D15 /* Main.storyboard */,
 				AB63477B24B6C2E7001F0D15 /* ImagePostViewController.swift */,
+				AB63477D24B7E61A001F0D15 /* UIImage+Scaling.swift */,
 				AB63477024B6B136001F0D15 /* Assets.xcassets */,
 				AB63477224B6B136001F0D15 /* LaunchScreen.storyboard */,
 				AB63477524B6B136001F0D15 /* Info.plist */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB63476824B6B134001F0D15 /* AppDelegate.swift in Sources */,
+				AB63477E24B7E61A001F0D15 /* UIImage+Scaling.swift in Sources */,
 				AB63477C24B6C2E7001F0D15 /* ImagePostViewController.swift in Sources */,
 				AB63476A24B6B134001F0D15 /* SceneDelegate.swift in Sources */,
 			);
