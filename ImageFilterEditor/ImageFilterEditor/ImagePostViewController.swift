@@ -31,7 +31,7 @@ class ImagePostViewController: UIViewController {
     
     var orignalImage: UIImage? {
         didSet {
-            
+            updateImage()
         }
     }
 
@@ -66,9 +66,8 @@ class ImagePostViewController: UIViewController {
         }
     }
     
-    private func image(byFiltering image: UIImage) -> UIImage {
-        let inputImage = CIImage(image: image)
-    
+    private func image(byFiltering inputImage: CIImage) -> UIImage {
+            
         var outputImage = inputImage
         
         if invertColors.isOn {
@@ -78,7 +77,20 @@ class ImagePostViewController: UIViewController {
             outputImage = filteredImage
             }
         
-        vignetteFilter.inputImage = outputImage
+        if vignetteSlider.value > 0 {
+            vignetteFilter.inputImage = outputImage
+            vignetteFilter.radius = vignetteSlider.value * 20
+            vignetteFilter.intensity = vignetteSlider.value * 2
+            if let filteredImage = vignetteFilter.outputImage {
+                outputImage = filteredImage
+            }
+        }
+        
+        
+        
+        guard let renderedImage = context.createCGImage(outputImage, from: inputImage.extent) else { return orignalImage! }
+        
+        return UIImage(cgImage: renderedImage)
         
     }
 }
