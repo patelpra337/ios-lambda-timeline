@@ -12,6 +12,13 @@
 		ABF7401D24BB9ABF00C26756 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF7401B24BB9ABF00C26756 /* Main.storyboard */; };
 		ABF7401F24BB9AC000C26756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABF7401E24BB9AC000C26756 /* Assets.xcassets */; };
 		ABF7402224BB9AC000C26756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABF7402024BB9AC000C26756 /* LaunchScreen.storyboard */; };
+		ABF7402A24BBABB100C26756 /* AudioVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7402924BBABB100C26756 /* AudioVisualizer.swift */; };
+		ABF7402C24BBAC4B00C26756 /* AudioComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7402B24BBAC4B00C26756 /* AudioComment.swift */; };
+		ABF7403224BBAD9B00C26756 /* AudioCommentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403124BBAD9B00C26756 /* AudioCommentViewCell.swift */; };
+		ABF7403724BBB0E600C26756 /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403624BBB0E600C26756 /* AudioPlayerViewController.swift */; };
+		ABF7403924BBB10900C26756 /* AudioRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403824BBB10900C26756 /* AudioRecorderViewController.swift */; };
+		ABF7403B24BBB30C00C26756 /* AudioCommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403A24BBB30C00C26756 /* AudioCommentsTableViewController.swift */; };
+		ABF7403E24BBB5DD00C26756 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403D24BBB5DD00C26756 /* Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		ABF7401E24BB9AC000C26756 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABF7402124BB9AC000C26756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABF7402324BB9AC000C26756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABF7402924BBABB100C26756 /* AudioVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizer.swift; sourceTree = "<group>"; };
+		ABF7402B24BBAC4B00C26756 /* AudioComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComment.swift; sourceTree = "<group>"; };
+		ABF7403124BBAD9B00C26756 /* AudioCommentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCommentViewCell.swift; sourceTree = "<group>"; };
+		ABF7403624BBB0E600C26756 /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
+		ABF7403824BBB10900C26756 /* AudioRecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderViewController.swift; sourceTree = "<group>"; };
+		ABF7403A24BBB30C00C26756 /* AudioCommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCommentsTableViewController.swift; sourceTree = "<group>"; };
+		ABF7403D24BBB5DD00C26756 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,69 @@
 		ABF7401424BB9ABF00C26756 /* AudioComments */ = {
 			isa = PBXGroup;
 			children = (
-				ABF7401524BB9ABF00C26756 /* AppDelegate.swift */,
-				ABF7401724BB9ABF00C26756 /* SceneDelegate.swift */,
-				ABF7401B24BB9ABF00C26756 /* Main.storyboard */,
-				ABF7401E24BB9AC000C26756 /* Assets.xcassets */,
-				ABF7402024BB9AC000C26756 /* LaunchScreen.storyboard */,
 				ABF7402324BB9AC000C26756 /* Info.plist */,
+				ABF7403C24BBB5A800C26756 /* Helpers */,
+				ABF7402F24BBAD5700C26756 /* Model */,
+				ABF7402D24BBAD2C00C26756 /* Resources */,
+				ABF7402E24BBAD4100C26756 /* Story Boards */,
+				ABF7403324BBB06200C26756 /* View Controllers */,
+				ABF7403024BBAD6500C26756 /* Views */,
 			);
 			path = AudioComments;
+			sourceTree = "<group>";
+		};
+		ABF7402D24BBAD2C00C26756 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ABF7401524BB9ABF00C26756 /* AppDelegate.swift */,
+				ABF7401724BB9ABF00C26756 /* SceneDelegate.swift */,
+				ABF7401E24BB9AC000C26756 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ABF7402E24BBAD4100C26756 /* Story Boards */ = {
+			isa = PBXGroup;
+			children = (
+				ABF7402024BB9AC000C26756 /* LaunchScreen.storyboard */,
+				ABF7401B24BB9ABF00C26756 /* Main.storyboard */,
+			);
+			path = "Story Boards";
+			sourceTree = "<group>";
+		};
+		ABF7402F24BBAD5700C26756 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABF7402B24BBAC4B00C26756 /* AudioComment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABF7403024BBAD6500C26756 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ABF7402924BBABB100C26756 /* AudioVisualizer.swift */,
+				ABF7403124BBAD9B00C26756 /* AudioCommentViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ABF7403324BBB06200C26756 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABF7403A24BBB30C00C26756 /* AudioCommentsTableViewController.swift */,
+				ABF7403624BBB0E600C26756 /* AudioPlayerViewController.swift */,
+				ABF7403824BBB10900C26756 /* AudioRecorderViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		ABF7403C24BBB5A800C26756 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				ABF7403D24BBB5DD00C26756 /* Formatter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +204,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF7403B24BBB30C00C26756 /* AudioCommentsTableViewController.swift in Sources */,
+				ABF7403724BBB0E600C26756 /* AudioPlayerViewController.swift in Sources */,
+				ABF7403924BBB10900C26756 /* AudioRecorderViewController.swift in Sources */,
+				ABF7403E24BBB5DD00C26756 /* Formatter.swift in Sources */,
 				ABF7401624BB9ABF00C26756 /* AppDelegate.swift in Sources */,
+				ABF7402A24BBABB100C26756 /* AudioVisualizer.swift in Sources */,
+				ABF7403224BBAD9B00C26756 /* AudioCommentViewCell.swift in Sources */,
+				ABF7402C24BBAC4B00C26756 /* AudioComment.swift in Sources */,
 				ABF7401824BB9ABF00C26756 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

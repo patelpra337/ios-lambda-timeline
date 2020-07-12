@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Audio Comments Table View Controller-->
         <scene sceneID="d6Y-j5-EGS">
             <objects>
-                <tableViewController id="x7m-QJ-mEr" sceneMemberID="viewController">
+                <tableViewController id="x7m-QJ-mEr" customClass="AudioCommentsTableViewController" customModule="AudioComments" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Cm-hf-zhG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Audio Comments" id="Gk0-eb-kLb">
-                                    <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="WPp-mP-IW2">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="WPp-mP-IW2">
                                         <connections>
                                             <segue destination="m5o-eY-vpn" kind="presentation" id="brL-aC-xol"/>
                                         </connections>
@@ -29,7 +29,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="252" id="QjB-bE-clp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AudioCommentCell" rowHeight="252" id="QjB-bE-clp" customClass="AudioCommentCell" customModule="AudioComments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="252"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QjB-bE-clp" id="OxL-rD-1Ot">
@@ -75,18 +75,30 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqT-eq-JTK">
                                                             <rect key="frame" x="81" y="0.0" width="74" height="22.5"/>
                                                             <state key="normal" title="Button" image="gobackward.15" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="rewind15Seconds:" destination="QjB-bE-clp" eventType="touchUpInside" id="AEZ-u4-XO1"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aH8-gT-Xpg">
                                                             <rect key="frame" x="163" y="0.0" width="69" height="22.5"/>
                                                             <state key="normal" title="Button" image="play.fill" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="togglePlayback:" destination="QjB-bE-clp" eventType="touchUpInside" id="IGH-DP-Vca"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHd-AM-tMy">
                                                             <rect key="frame" x="240" y="0.0" width="74" height="22.5"/>
                                                             <state key="normal" title="Button" image="goforward.15" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="forward15Seconds:" destination="QjB-bE-clp" eventType="touchUpInside" id="87r-3v-j8z"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex3-44-TVe">
                                                             <rect key="frame" x="322" y="0.0" width="73.5" height="22.5"/>
                                                             <state key="normal" title="Button" image="trash" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="deleteAudioComment:" destination="QjB-bE-clp" eventType="touchUpInside" id="nEf-6r-Xak"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -97,6 +109,9 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="29" id="0Sk-Zh-R5r"/>
                                             </constraints>
+                                            <connections>
+                                                <action selector="updateCurrentTime:" destination="QjB-bE-clp" eventType="valueChanged" id="U2b-vF-7FT"/>
+                                            </connections>
                                         </slider>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5b-mA-qAv">
                                             <rect key="frame" x="36" y="107" width="282.5" height="20.5"/>
@@ -127,6 +142,15 @@
                                         <constraint firstItem="pvR-2c-AJS" firstAttribute="trailing" secondItem="OxL-rD-1Ot" secondAttribute="trailingMargin" id="qPe-uH-OL7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="durationLabel" destination="FW7-WV-WD6" id="J8c-Ld-Fkk"/>
+                                    <outlet property="playButton" destination="aH8-gT-Xpg" id="mcS-vY-ekM"/>
+                                    <outlet property="timeElapsedLabel" destination="n5b-mA-qAv" id="TVU-8l-UTH"/>
+                                    <outlet property="timeRemainingLabel" destination="fzr-pA-y2U" id="xot-5e-UUK"/>
+                                    <outlet property="timeSlider" destination="pvR-2c-AJS" id="JDr-m7-L4q"/>
+                                    <outlet property="timestampLabel" destination="VXZ-L5-wlw" id="IGa-ao-v1h"/>
+                                    <outlet property="titleLabel" destination="wXN-lN-AtU" id="8oZ-8L-r7i"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -139,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="-439.13043478260875" y="94.419642857142847"/>
         </scene>
-        <!--View Controller-->
+        <!--Audio Recorder View Controller-->
         <scene sceneID="hqr-pv-HQg">
             <objects>
-                <viewController id="m5o-eY-vpn" sceneMemberID="viewController">
+                <viewController id="m5o-eY-vpn" customClass="AudioRecorderViewController" customModule="AudioComments" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EiK-MV-azN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,14 +178,14 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="New Audio Comment" id="vc7-QP-jFp">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="J1x-f6-3Jo">
+                                        <barButtonItem key="leftBarButtonItem" id="J1x-f6-3Jo">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0vh-6K-0rx">
                                                 <rect key="frame" x="20" y="13" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="d2K-jf-8oh">
+                                        <barButtonItem key="rightBarButtonItem" id="d2K-jf-8oh">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gsI-Hh-uTK">
                                                 <rect key="frame" x="302" y="13" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -204,7 +228,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reQ-TY-EZP">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reQ-TY-EZP" customClass="AudioVisualizer" customModule="AudioComments" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="57" width="414" height="670"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
