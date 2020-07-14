@@ -16,7 +16,7 @@
 		ABF7402C24BBAC4B00C26756 /* AudioComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7402B24BBAC4B00C26756 /* AudioComment.swift */; };
 		ABF7403224BBAD9B00C26756 /* AudioCommentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403124BBAD9B00C26756 /* AudioCommentViewCell.swift */; };
 		ABF7403724BBB0E600C26756 /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403624BBB0E600C26756 /* AudioPlayerViewController.swift */; };
-		ABF7403924BBB10900C26756 /* AudioRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403824BBB10900C26756 /* AudioRecorderViewController.swift */; };
+		ABF7403924BBB10900C26756 /* AudioRecorderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403824BBB10900C26756 /* AudioRecorderController.swift */; };
 		ABF7403B24BBB30C00C26756 /* AudioCommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403A24BBB30C00C26756 /* AudioCommentsTableViewController.swift */; };
 		ABF7403E24BBB5DD00C26756 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7403D24BBB5DD00C26756 /* Formatter.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 		ABF7402B24BBAC4B00C26756 /* AudioComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComment.swift; sourceTree = "<group>"; };
 		ABF7403124BBAD9B00C26756 /* AudioCommentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCommentViewCell.swift; sourceTree = "<group>"; };
 		ABF7403624BBB0E600C26756 /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
-		ABF7403824BBB10900C26756 /* AudioRecorderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderViewController.swift; sourceTree = "<group>"; };
+		ABF7403824BBB10900C26756 /* AudioRecorderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderController.swift; sourceTree = "<group>"; };
 		ABF7403A24BBB30C00C26756 /* AudioCommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCommentsTableViewController.swift; sourceTree = "<group>"; };
 		ABF7403D24BBB5DD00C26756 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,7 +120,7 @@
 			children = (
 				ABF7403A24BBB30C00C26756 /* AudioCommentsTableViewController.swift */,
 				ABF7403624BBB0E600C26756 /* AudioPlayerViewController.swift */,
-				ABF7403824BBB10900C26756 /* AudioRecorderViewController.swift */,
+				ABF7403824BBB10900C26756 /* AudioRecorderController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			files = (
 				ABF7403B24BBB30C00C26756 /* AudioCommentsTableViewController.swift in Sources */,
 				ABF7403724BBB0E600C26756 /* AudioPlayerViewController.swift in Sources */,
-				ABF7403924BBB10900C26756 /* AudioRecorderViewController.swift in Sources */,
+				ABF7403924BBB10900C26756 /* AudioRecorderController.swift in Sources */,
 				ABF7403E24BBB5DD00C26756 /* Formatter.swift in Sources */,
 				ABF7401624BB9ABF00C26756 /* AppDelegate.swift in Sources */,
 				ABF7402A24BBABB100C26756 /* AudioVisualizer.swift in Sources */,

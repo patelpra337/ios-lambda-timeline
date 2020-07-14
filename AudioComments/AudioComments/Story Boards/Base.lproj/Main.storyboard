@@ -163,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="-439.13043478260875" y="94.419642857142847"/>
         </scene>
-        <!--Audio Recorder View Controller-->
+        <!--Audio Recorder Controller-->
         <scene sceneID="hqr-pv-HQg">
             <objects>
-                <viewController id="m5o-eY-vpn" customClass="AudioRecorderViewController" customModule="AudioComments" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m5o-eY-vpn" customClass="AudioRecorderController" customModule="AudioComments" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EiK-MV-azN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,6 +184,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Cancel"/>
                                             </button>
+                                            <connections>
+                                                <action selector="cancelRecording:" destination="m5o-eY-vpn" id="0r5-W6-3VL"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" id="d2K-jf-8oh">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gsI-Hh-uTK">
@@ -191,6 +194,9 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Send"/>
                                             </button>
+                                            <connections>
+                                                <action selector="sendRecording:" destination="m5o-eY-vpn" id="IHp-vM-wmR"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -206,6 +212,9 @@
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="s7L-NS-efo">
                                         <rect key="frame" x="52" y="0.0" width="270" height="31"/>
+                                        <connections>
+                                            <action selector="updateCurrentTime:" destination="m5o-eY-vpn" eventType="valueChanged" id="GVV-wb-HJ4"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgH-qq-uV3">
                                         <rect key="frame" x="328" y="0.0" width="54" height="30"/>
@@ -221,10 +230,16 @@
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIL-kf-J7m">
                                         <rect key="frame" x="0.0" y="0.0" width="182" height="22"/>
                                         <state key="normal" title="Button" image="play.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="togglePlayback:" destination="m5o-eY-vpn" eventType="touchUpInside" id="D5O-AF-Qd9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXr-dJ-mqj">
                                         <rect key="frame" x="297" y="0.0" width="75" height="22"/>
                                         <state key="normal" title="Button" image="recordingtape" catalog="system"/>
+                                        <connections>
+                                            <action selector="toggleRecording:" destination="m5o-eY-vpn" eventType="touchUpInside" id="Q2l-mC-KnU"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -251,6 +266,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KAb-cq-hXY"/>
                     </view>
+                    <connections>
+                        <outlet property="audioVisualizer" destination="reQ-TY-EZP" id="29y-yj-XtS"/>
+                        <outlet property="playButton" destination="TIL-kf-J7m" id="o3F-mA-Ka9"/>
+                        <outlet property="recordButton" destination="mXr-dJ-mqj" id="tjl-aX-LjF"/>
+                        <outlet property="timeElapsedLabel" destination="gfj-kL-yG4" id="gaK-y2-TcP"/>
+                        <outlet property="timeRemainingLabel" destination="OgH-qq-uV3" id="xde-Iy-7sE"/>
+                        <outlet property="timeSlider" destination="s7L-NS-efo" id="zen-Lq-GME"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmK-4D-xIl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
