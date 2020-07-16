@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kCj-KG-1Ec">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kCj-KG-1Ec">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -179,7 +179,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="DFP-LS-3Zd">
-                        <barButtonItem key="leftBarButtonItem" title="Map" id="cfn-fQ-Zu7"/>
+                        <barButtonItem key="leftBarButtonItem" title="Video" id="cfn-fQ-Zu7"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nRH-bc-duR">
                             <connections>
                                 <action selector="addNewVideoPost:" destination="p8h-ha-dnz" id="tz5-OU-rIO"/>
