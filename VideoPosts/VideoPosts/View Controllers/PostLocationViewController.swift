@@ -14,7 +14,6 @@ class PostLocationViewController: UIViewController {
     
     @IBOutlet var mapView: MKMapView!
     
-    
     var posts: [Post] = []
     
     var postArea: [Post] = [] {
@@ -115,5 +114,27 @@ extension PostLocationViewController: MKMapViewDelegate {
         
         return annotationView
     }
+}
+
+extension PostLocationViewController {
     
+    func thumbnailFromVideo(url: URL) -> UIImage? {
+        
+        let asset = AVAsset(url: url)
+        let assetImage = AVAssetImageGenerator(asset: asset)
+        
+        assetImage.appliesPreferredTrackTransform = true
+        assetImage.maximumSize = CGSize(width: 40, height: 40)
+        
+        let time = CMTimeMakeWithSeconds(1.0, preferredTimescale: 600)
+        
+        do {
+            let image = try assetImage.copyCGImage(at: time, actualTime: nil)
+            let thumbnail = UIImage(cgImage: image)
+            return thumbnail
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
 }
